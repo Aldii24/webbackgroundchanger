@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=w">
+    <title>Web Background Changer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title" id="title">Pilih Warna</div>
+        <div class="box">
+            <div class="circle red"></div>
+            <div class="circle blue"></div>
+            <div class="circle green"></div>
+            <div class="circle black" id="black"></div>
+            <div class="circle yellow"></div>
+        </div>
+    </div>
+
+    <script>
+        const circles = document.querySelectorAll(".circle");
+
+        circles.forEach(circle => {
+            console.log(circles)
+            circle.addEventListener("click", ({ target }) => {
+                const { backgroundColor } = getComputedStyle(target)
+                document.body.style.backgroundColor = backgroundColor;
+            })
+        })
+
+    </script>
+</body>
+
+</html>
